@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lession 10</title>
+    <meta charset="utf8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--回家作業：讓使用者註冊帳號密碼(記得跳出視窗提醒使用者註冊成功)，並且在下面再輸入一次帳號密碼，然後請驗證兩組帳號是否一致-->
+    <section>
+        <h1>註冊</h1>
+        <div>
+            <label for="accountSignUp">帳號</label>
+            <input type="text" id="accountSignUp"><br>
+            <label for="passwordSignUp">密碼</label>
+            <input type="password" id="passwordSignUp">
+            <button type="button" onclick="SignUp()">註冊</button>
+        </div>
+    </section>
+    <section>
+        <h1>登入</h1>
+        <div>
+            <label for="accountSignIn">帳號</label>
+            <input type="text" id="accountSignIn"><br>
+            <label for="passwordSignIn">密碼</label>
+            <input type="password" id="passwordSignIn">
+            <button type="button" onclick="SignIn()">登入</button>
+        </div>
+    </section>
+    <script>
+        var userAccount = '';
+        var pwd = '';
+        function SignUp() {
+            userAccount = $('#accountSignUp').val();
+            pwd = $('#passwordSignUp').val();
+            if (userAccount == '') {
+                alert('請輸入帳號');
+                return;
+            }
+            if (pwd == '') {
+                alert('請輸入密碼');
+                return;
+            }
+            alert(`註冊成功`);
+            $('#accountSignUp,#passwordSignUp').val('');
+        }
+        function SignIn() {
+            if (userAccount == '' || pwd == '') {
+                alert('請註冊帳號');
+                return;
+            }
+            if (userAccount === $('#accountSignIn').val() && pwd === $('#passwordSignIn').val()) {
+                alert('登入成功');
+            } else {
+                alert('登入失敗');
+            }
+        }
+    </script>
+</body>
+
+</html>

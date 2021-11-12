@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lession 06</title>
+    <meta charset="utf8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--把我要隱藏起來的字隱藏起來-->
+    <div id="div1">
+        <div class="target">把我隱藏起來</div>
+        <div class="target">把我隱藏起來</div>
+    </div>
+    <div class="target">把我顯示出來</div>
+    <div class="target">把我顯示出來</div>
+
+    <script>
+        $(function () {
+            $('#div1 .target').hide();
+        });
+    </script>
+</body>
+
+</html>

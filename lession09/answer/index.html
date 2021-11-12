@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lession 09</title>
+    <meta charset="utf8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--當使用者輸入密碼，檢查密碼是否為Abc123，如果是則跳出彈跳視窗「登入成功」，錯誤就跳出「登入失敗」-->
+    <input type="password" id="pwd">
+    <button type="button" id="btnSubmit">檢查</button>
+    <script>
+        $(function () {
+            $('#btnSubmit').on('click', function () {
+                var pwd = $('#pwd').val();
+                if (pwd === 'Abc123') {
+                    alert('登入成功');
+                } else {
+                    alert('登入失敗');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

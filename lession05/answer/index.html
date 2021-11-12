@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lession 05</title>
+    <meta charset="utf8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--讓標題的字型大小放大兩倍-->
+    <div class="title">
+        標題1
+    </div>
+    <div class="title">
+        標題2
+    </div>
+    <div class="title">
+        標題3
+    </div>
+    <button type="button" id="btnZoom">放大</button>
+    <script>
+        $(function () {
+            $('#btnZoom').on('click', function () {
+                $('.title').css('font-size', '2rem');
+            });
+        });
+    </script>
+</body>
+
+</html>

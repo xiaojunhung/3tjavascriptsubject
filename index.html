@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <meta charset="utf8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <h1 id="h1">ID #h1</h1>
+    <p class="p1">class .p1</p>
+    <p class="p1">class .p1</p>
+    <p class="p2">class .p2</p>
+    <h1 id="h2">ID #h2</h1>
+    <label for=“name”>你的名字</label>
+    <input type="text" id="name">
+    <button type="button" onclick="clickf1()">按我</button>
+    <script>
+        function clickf1() {
+            var name = $('#name').val();
+            alert(name + '按我');
+        }
+    </script>
+</body>
+
+</html>
