@@ -36,22 +36,25 @@
     </section>
     <script>
         function addToCart(id){
+            //取得目前圖片的位置與大小
             var left = $(id).offset().left;
             var top = $(id).offset().top;
             var height = $(id).height();
             var width = $(id).width();
-
+            //購物車按鈕的位置
             var btnCart = $('#btn-cart');
             var toLeft = btnCart.offset().left;
             var toTop = btnCart.offset().top;
-            
+            var toHeight = btnCart.height();
+            var toWidth = btnCart.width();
+            //產生飛行物件
             var newObj = $(id).clone();
             var newId = 'fly-obj-'+Math.random();
             newObj.height(height+'px');
             newObj.width(width+'px');
             newObj.prop('id',newId);
             newObj.appendTo('body');
-            
+            //讓它飛一會
             $(newObj).fly({
                 start:{
                   left: left,  //開始位置（必填）元素會被設置position: fixed
@@ -60,17 +63,20 @@
                 end:{
                   left: toLeft, //结束位置（必填）
                   top: toTop,  //结束位置（必填）
-                  width: 20, //结束時高度
-                  height: 20, //结束時高度
+                  width: toWidth, //结束時高度
+                  height: toHeight, //结束時高度
                 },
                 autoPlay: true, //是否直接運動,默認true
                 speed: 1, //越大越快，默認1.2
-                vertex_Rtop:200, //運動軌跡最高點top值，默認20
+                vertex_Rtop:20, //運動軌跡最高點top值，默認20
                 onEnd: function(){
+                    //刪除飛行物體
                     $(newObj).remove();
+                    //重新計算商品的數量
                     var oldNumber = Number($(btnCart).children('span').text());
                     var newNumber = oldNumber +1;
                     $(btnCart).children('span').text(newNumber);
+                    //讓它搖擺
                     $(btnCart).effect('shake',{distance:5});
                 } //结束回傳
             })
